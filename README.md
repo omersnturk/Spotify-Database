@@ -5,7 +5,8 @@
  
 ![ERD Diagram](https://github.com/omersnturk/Spotify-Database/blob/main/ERD%20Diagram/Spotify_5.4.png)
 
-2 Tables of the Project
+---
+### Tables of the Project
 2.1 Podcasters
   
 Podcaster_ID column has “primary key” constraint.
@@ -145,7 +146,7 @@ Track_ID and Genre_ID columns have “foreign key” and “NOT NULL” constrai
 Subscription_Plan_ID column has “primary key” constraint.
 Name column has “NOT NULL” constraint.
 
-
+---
 ### Stored Procedures of the Project
 
 3.1 Update User Email Procedure
@@ -170,6 +171,7 @@ Parameter is “User_ID” that is unique identifier of the user whose detail ne
  This procedure fetches all details of a track from the “TRACKS” table based on provided “Artist_ID”.
 Parameter is “Artist_ID” that is unique identifier of the user whose detail need to fetch.
 
+---
 ### Views of the Project
 
 4.1 Saved Episodes View
@@ -192,7 +194,7 @@ Long Episodes View includes information about episodes that are greater than 30 
 
 Artists With Albums Vİew includes information about artists that have one or more albums. The columns in the view include artists details ( Artists_ID and Artists_Name). This view is based on specified joins between the ARTISTS and ARTISTS_ALBUM tables.
 
-
+---
 ### Indexes of the Project
 5.1 Username Index
 The idx_UserName index on the Name column of the USERS table was created to enhance the performance of searches and queries involving usernames. With the massive size of Name column UserName index takes a significant part.
