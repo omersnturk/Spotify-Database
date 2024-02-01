@@ -1,0 +1,176 @@
+ALTER TABLE subscription_plan AUTO_INCREMENT=100;
+
+ALTER TABLE users AUTO_INCREMENT=100000000000
+
+ALTER TABLE family AUTO_INCREMENT=50000000
+
+ALTER TABLE payment AUTO_INCREMENT=100000000000000
+
+ALTER TABLE podcasters AUTO_INCREMENT=200000000
+
+ALTER TABLE artists AUTO_INCREMENT=350000000
+
+ALTER TABLE Episodes AUTO_INCREMENT=1000000000
+
+ALTER TABLE saved_episodes AUTO_INCREMENT=2000000000
+
+ALTER TABLE Playlists AUTO_INCREMENT=150000000000
+
+ALTER TABLE playlist_tracks AUTO_INCREMENT=200000000000
+
+ALTER TABLE Tracks AUTO_INCREMENT=250000000000
+
+ALTER TABLE Genres AUTO_INCREMENT=100000
+
+ALTER TABLE track_genre AUTO_INCREMENT=300000000000
+
+ALTER TABLE albums AUTO_INCREMENT=5000000000
+
+ALTER TABLE logs AUTO_INCREMENT=2000000000000
+
+ALTER TABLE artists_albums AUTO_INCREMENT=10000000000
+
+ALTER TABLE users_playlists AUTO_INCREMENT=350000000000
+
+ALTER TABLE user_podcasters AUTO_INCREMENT=20000000000
+
+ALTER TABLE users_artists AUTO_INCREMENT=400000000000
+
+ALTER TABLE users ADD COLUMN email varchar(50)
+
+ALTER TABLE artists DROP COLUMN Number_of_Followers
+
+ALTER TABLE payment DROP COLUMN Payment_Method
+ALTER TABLE payment ADD COLUMN Payment_Method char(20)
+
+ALTER TABLE albums ADD COLUMN Artist_ID bigint
+
+ALTER TABLE albums ADD CONSTRAINT FOREIGN KEY (Artist_ID) REFERENCES artists(Artist_ID)
+
+DELETE FROM Albums;
+DELETE FROM Episodes WHERE Episode_ID > 0;
+
+ALTER TABLE podcasters add column rating DOUBLE
+
+ALTER TABLE Episodes ADD COLUMN Release_Date DATE
+
+
+CREATE VIEW SavedEpisodesView AS
+SELECT
+   U.User_ID,
+   U.Name,
+   E.Episode_ID,
+   E.Episode_Name,
+   E.Duration
+FROM
+   USERS U
+   JOIN SAVED_EPISODES SE ON U.User_ID = SE.User_ID
+   JOIN EPISODES E ON SE.Episode_ID = E.Episode_ID
+WHERE
+   E.Duration > 10;
+
+
+CREATE VIEW UserArtistsView AS
+SELECT
+    U.User_ID,
+    U.Name,
+    A.Artist_ID,
+    A.Artist_Name
+FROM
+    USERS U
+    JOIN USER_ARTISTS UA ON U.User_ID = UA.User_ID
+    JOIN Artits A ON UA.Artist_ID = A.Artist_ID
+
+
+CREATE VIEW UserPaymentView AS
+SELECT
+    U.User_ID,
+    U.Name,
+    U.Email,
+    P.Payment_ID,
+    P.Amount,
+    P.Payment_Date
+FROM
+    USERS U
+    JOIN PAYMENT P ON U.User_ID = P.User_ID;
+
+
+CREATE VIEW LongEpisodesView AS
+SELECT
+    Episode_ID,
+    Episode_Name,
+    Duration
+FROM
+    EPISODES
+WHERE
+    Duration > 30;
+
+
+CREATE VIEW ArtistsWithAlbumsView AS
+SELECT
+    Artist_ID,
+    Artist_Name
+FROM
+    ARTISTS
+WHERE
+    Artist_ID IN (SELECT DISTINCT Artist_ID FROM ARTISTS_ALBUMS);
+
+
+
+DELIMITER //
+
+CREATE PROCEDURE UpdateUserEmail(IN User_ID INT, IN NewEmail VARCHAR(255))
+BEGIN
+    UPDATE USERS
+    SET Email = NewEmail
+    WHERE User_ID = User_¬ID;
+END //
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE PROCEDURE UpdateTrackName(IN Track_ID INT, IN NewName VARCHAR(255))
+BEGIN
+    UPDATE TRACKS
+    SET Track_Name = NewName
+    WHERE Track_ID = Track_ID;
+END //
+
+DELIMITER ;
+
+
+
+DELIMITER //
+
+CREATE PROCEDURE GetUserByID(IN User_ID INT)
+BEGIN
+    SELECT *
+    FROM USERS
+    WHERE User_ID = User_ID;
+END //
+
+DELIMITER ;
+
+
+
+DELIMITER //
+
+CREATE PROCEDURE GetTracksByArtist(IN Artist_ID INT)
+BEGIN
+    SELECT T.Track_Name, T.Duration, G.Genre_Name
+    FROM Track T
+    JOIN Track_Genre TG ON T.Track_ID = TG.Track_ID
+    JOIN Genre G ON TG.Genre_ID = G.Genre_ID
+    WHERE T.Artist_ID = Artist_ID;
+END //
+
+DELIMITER ;
+
+
+CREATE INDEX idx_UserName ON USERS (Name);
+CREATE INDEX idx_EpisodeDuration ON EPISODES (Duration);
+CREATE INDEX idx_GenreName ON GENRE (Genre_Name); 	
+CREATE INDEX idx_Email ON USERS (Email);
+CREATE INDEX idx_TrackName ON TRACKS (Track_Name);

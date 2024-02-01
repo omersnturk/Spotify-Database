@@ -1,0 +1,567 @@
+use spotifyDB
+
+db.createCollection("users")
+db.createCollection("tracks")
+db.createCollection("payments")
+db.createCollection("artists")
+db.createCollection("logs")
+db.createCollection("podcasters")
+db.createCollection("playlists")
+db.createCollection("subscription_plan")
+db.createCollection("family_group_id")
+db.createCollection("albums")
+db.createCollection("genres")
+
+{
+  "users": [
+    {
+      "user_id": 100,
+      "name": "Barış",
+      "contact": {
+        "email": "baris@gmail.com",
+        "phone_number": "5050123456"
+      },
+      "password_hash": "$2y$12$QjSH496pcT5CEbzjD/vtVeH0",
+      "birth_date": "28.11.1999",
+      "subscription": {
+        "subscription_plan": "family"
+      }
+    },
+    {
+      "user_id": 101,
+      "name": "Kaan",
+      "contact": {
+        "email": "kaan@gmail.com",
+        "phone_number": "5301234567"
+      },
+      "password_hash": "d3laeg$zqU/1IN0/AogfP4cmSJI1",
+      "birth_date": "24.2.2002",
+      "subscription": {
+        "subscription_plan": "family"
+      }
+    },
+    {
+      "user_id": 102,
+      "name": "Ömer",
+      "contact": {
+        "email": "omer@gmail.com",
+        "phone_number": "5349871234"
+      },
+      "password_hash": "2i$v=19$m=1024t=2$YzJBSzV4TUhkMzc3",
+      "birth_date": "16.12.2006",
+      "subscription": {
+        "subscription_plan": "individual",
+        "family_group_id": 1
+      }
+    },
+    {
+      "user_id": 103,
+      "name": "Ahmet",
+      "contact": {
+        "email": "ahmet@gmail.com",
+        "phone_number": "5312345678"
+      },
+      "password_hash": "c1isvFdxMDdmjOlvxpecFw",
+      "birth_date": "14.9.2000",
+      "subscription": {
+        "subscription_plan": "student"
+      }
+    },
+    {
+      "user_id": 104,
+      "name": "Ali",
+      "contact": {
+        "email": "ali@gmail.com",
+        "phone_number": "5324567890"
+      },
+      "password_hash": "3tfHKFy36d4J0Ltp3lRtee9HDxY3K",
+      "birth_date": "18.4.1990",
+      "subscription": {
+        "subscription_plan": "student"
+      }
+    },
+    {
+      "user_id": 105,
+      "name": "Veli",
+      "contact": {
+        "email": "veli@gmail.com",
+        "phone_number": "5334567890"
+      },
+      "password_hash": "vc8lpXRW9/S0sYY2i2jHT0",
+      "birth_date": "19.05.1995",
+      "subscription": {
+        "subscription_plan": "individual"
+      }
+    }
+  ],
+}
+
+
+
+
+
+{
+  "tracks": [
+    {
+      "track_id": 5000000005,
+      "album_id": 3781589,
+      "track_name": "Deli",
+      "number_of_listens": 3,
+      "duration": "3:04"
+    },
+    {
+      "track_id": 5000000006,
+      "album_id": 58072543,
+      "track_name": "Yürek",
+      "number_of_listens": 4,
+      "duration": "4:49"
+    },
+    {
+      "track_id": 5000000010,
+      "album_id": 27710,
+      "track_name": "Helal Olsun",
+      "number_of_listens": 8,
+      "duration": "8:58"
+    },
+    {
+      "track_id": 5000000007,
+      "album_id": 11447012,
+      "track_name": "Buzdan Şato",
+      "number_of_listens": 3,
+      "duration": "3:37"
+    },
+    {
+      "track_id": 5000000008,
+      "album_id": 71181855,
+      "track_name": "Değmesin Ellerimiz",
+      "number_of_listens": 4,
+      "duration": "4:27"
+    },
+    {
+      "track_id": 5000000009,
+      "album_id": 73997647,
+      "track_name": "Honey (ARE U COMING)",
+      "number_of_listens": 2,
+      "duration": "2:47"
+    },
+    {
+      "track_id": 5000000011,
+      "album_id": 33643430,
+      "track_name": "Dem",
+      "number_of_listens": 3,
+      "duration": "3:13"
+    },
+    {
+      "track_id": 5000000012,
+      "album_id": 42958886,
+      "track_name": "Tastamam",
+      "number_of_listens": 3,
+      "duration": "3:16"
+    },
+    {
+      "track_id": 5000000013,
+      "album_id": 37245221,
+      "track_name": "Hikayem Bitmedi",
+      "number_of_listens": 3,
+      "duration": "3:04"
+    },
+    {
+      "track_id": 5000000014,
+      "album_id": 263685,
+      "track_name": "The Four Seasons: Spring",
+      "number_of_listens": 10,
+      "duration": "10:20"
+    },
+    {
+      "track_id": 5000000015,
+      "album_id": 12358,
+      "track_name": "The Four Seasons: Summer",
+      "number_of_listens": 11,
+      "duration": "11:05"
+    },
+    {
+      "track_id": 5000000016,
+      "album_id": 9162,
+      "track_name": "The Four Seasons: Autumn",
+      "number_of_listens": 12,
+      "duration": "12:05"
+    },
+    {
+      "track_id": 5000000017,
+      "album_id": 27710,
+      "track_name": "The Four Seasons: Winter",
+      "number_of_listens": 8,
+      "duration": "8:58"
+    }
+  ]
+}
+
+
+
+
+
+
+
+{
+  "payments": [
+    {
+      "payment_id": 1,
+      "user_id": 100,
+      "payment_method": "Visa",
+      "payment_date": "10.01.2024",
+      "amount": 65
+    },
+    {
+      "payment_id": 2,
+      "user_id": 101,
+      "payment_method": "Mastercard",
+      "payment_date": "6.01.2024",
+      "amount": null
+    },
+    {
+      "payment_id": 3,
+      "user_id": 102,
+      "payment_method": "Debit Card",
+      "payment_date": "19.12.2023",
+      "amount": 40
+    },
+    {
+      "payment_id": 4,
+      "user_id": 103,
+      "payment_method": "Paypal",
+      "payment_date": "16.11.2023",
+      "amount": 22
+    }
+  ]
+}
+
+
+
+
+
+{
+  "artists": [
+    {
+      "artist_id": 1,
+      "artist_name": "Can Bonomo",
+      "about": "In addition to being a musician, Can Bonomo, who has works in different branches of art such as poetry books and illustration works, started playing guitar at the age of eight. Born in 1987 in Izmir, Bonomo moved to Istanbul and continues to work in this city, which is one of his biggest inspirations. Can Bonomo released his first album Meczup in 2011 and just before his second album, he represented Turkey in the Eurovision Song Contest with the song Love Me Back. Following the albums Aşktan ve Stranglikten (Out of Love and Strangeness) in 2012, Bulunmam Gerek (I Need to Be Found) in 2014 and Kâinat Sustu (Kâinat Sustu) in 2017, Can Bonomo's 5th album Ruhum Bela was released in April 2018. In addition to his music career, the artist has published his poems in three separate books, Delirmek Belirmektir (2013), Şu Sevdalar Tevatürü (2016) and Parya Koma (2018), for which he was awarded the Special Jury Award at the Yunus Emre Poetry Competition. He also contributes to many literary magazines as a writer.",
+      "number_of_followers": 718987,
+      "artist_albums": [
+        {
+          "album_name": "Bulunmam Gerek",
+          "release_date": "15.12.2014"
+        }
+      ]
+    },
+    {
+      "artist_id": 2,
+      "artist_name": "Måneskin",
+      "about": "With their raw, energetic and distorted sound Måneskin are meeting contemporary tastes and bringing back rock’n’roll at the top of international charts. They started as buskers playing in the streets of Rome in 2015 and, within a few years, made it to be the first Italian artist to spread worldwide. Victoria (bass), Damiano (lead singer), Thomas (guitar) and Ethan (drums), all in their twenties, are rebooting rock ‘n’ roll for a new generation of listeners.",
+      "number_of_followers": 8428312,
+      "artist_albums": [
+        {
+          "album_name": "RUSH!",
+          "release_date": "20.01.2023"
+        }
+      ]
+    },
+    {
+      "artist_id": 3,
+      "artist_name": "Model",
+      "about": "-",
+      "number_of_followers": 1385588,
+      "artist_albums": [
+        {
+          "album_name": "Diğer Masallar",
+          "release_date": "16.02.2011"
+        }
+      ]
+    },
+    {
+      "artist_id": 4,
+      "artist_name": "Duman",
+      "about": "It's hard to place Duman under a single genre, as various influences can be heard throughout their albums -- but a grunge feel combined with Turkish folk themes and an overall Arabic vocal style could somewhat provide an initial clue. The hardcore fan base of Duman may be populated mostly by teenagers around the age of 18, but the band is actually a massive influence in the modern Turkish rock scene. Although they may not be the first to cover Arabic styles or folk songs, they were definitely the first to make such musical approaches huge in 21st century Turkey. Duman are comprised of three permanent members: Kaan Tangoze (vocals/guitars), Ari Borakas (bass), and Batuhan Mutlugil (guitars). The first roots of the band may be found in Mad Madam, which was a cover band with a set list full of songs from Seattle groups. Kaan Tangoze and Ari Borakas were together in Mad Madam until Tangoze flew to Seattle to earn a graduate degree. Upon returning to Turkey with a handful of songs molded in the spirit of the Seattle scene, Tangoze formed Duman with Ari Barakos from his former group and Batuhan Mutlugil from another local cover band. After first deciding to work with session drummers, drummer Alen Konakoglu took on this responsibility and the group released Eski Köprünün Altinda in 1999.",
+      "number_of_followers": 5374414,
+      "artist_albums": [
+        {
+          "album_name": "Darmaduman",
+          "release_date": "12.09.2013"
+        }
+      ]
+    },
+    {
+      "artist_id": 5,
+      "artist_name": "Antonio Vivaldi",
+      "about": "The creator of hundreds of spirited, extroverted instrumental works, Italian composer Antonio Vivaldi is widely recognized as the master of the Baroque instrumental concerto, which he perfected and popularized more than any of his contemporaries. Vivaldi's kinetic rhythms, fluid melodies, bright instrumental effects, and extensions of instrumental technique make his some of the most enjoyable of Baroque music. He was highly influential among his contemporaries and successors: even as esteemed a figure as Johann Sebastian Bach adapted some of Vivaldi's music. Vivaldi's variable textures and dramatic effects initiated the shift toward what became the Classical style; a deeper understanding of his music begins with the realization that, compared with Bach and even Handel, he was Baroque music's arch progressive. Though not as familiar as his concerti, Vivaldi's stage and choral music is still of value; his sometimes bouncy, sometimes lyrical Gloria in D major (1708) has remained a perennial favorite. His operas were widely performed in his own time.",
+      "number_of_followers": 2389469,
+      "artist_albums": [
+        {
+          "album_name": "The Four Seasons:Spring in E Major",
+          "release_date": "16.02.2009"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+{
+  "logs": [
+    {
+      "log_id": 100000000002,
+      "user_id": 100,
+      "track_id": 5000000005,
+      "listening_date": "10.01.2024"
+    },
+    {
+      "log_id": 100000000002,
+      "user_id": 101,
+      "track_id": 5000000005,
+      "listening_date": "6.01.2024"
+    },
+    {
+      "log_id": 100000000000,
+      "user_id": 101,
+      "track_id": 5000000006,
+      "listening_date": "18.12.2023"
+    },
+    {
+      "log_id": 100000000001,
+      "user_id": 102,
+      "track_id": 5000000006,
+      "listening_date": "4.12.2023"
+    },
+    {
+      "log_id": 100000000002,
+      "user_id": 104,
+      "track_id": 5000000007,
+      "listening_date": "12.11.2023"
+    },
+    {
+      "log_id": 100000000002,
+      "user_id": 103,
+      "track_id": 5000000008,
+      "listening_date": "28.11.2023"
+    }
+  ]
+}
+
+
+
+
+{
+  "podcasters": [
+    {
+      "podcaster_id": 1,
+      "podcaster_name": "Bu Mu Yani?",
+      "rating": 4.8,
+      "about": "At twenty-seven, two childhood friends throw their corporate careers in the trash and embark on a journey to answer a single question: Is a simpler and more meaningful life possible?",
+      "episodes": [
+        {
+          "episode_name": "Rol Modellerin Gücü",
+          "duration": "42:12"
+        }
+      ]
+    },
+    {
+      "podcaster_id": 2,
+      "podcaster_name": "Fularsız Entellik",
+      "rating": 4.9,
+      "about": "Intellectualism for the people, despite the people. Interesting topics + critical thinking ",
+      "episodes": [
+        {
+          "episode_name": "Davranışsal Ekonomi",
+          "duration": "24:32"
+        },
+        {
+          "episode_name": "Davranışsal Ekonomi 2 Market Teoremi",
+          "duration": "12:23"
+        }
+      ]
+    },
+    {
+      "podcaster_id": 3,
+      "podcaster_name": "O Tarz Mı?",
+      "rating": 4.9,
+      "about": "Podcast by otarzmi",
+      "episodes": [
+        {
+          "episode_name": "S1E1 - ŞEFİMM",
+          "duration": "47:14"
+        },
+        {
+          "episode_name": "S1e2 - Sıcak Toplar",
+          "duration": "52:14"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+{
+  "playlists": [
+    {
+      "playlist_id": 3,
+      "playlist_name": "Trock",
+      "playlist_description": "Türkçe Rock",
+      "tracks": [
+        {
+          "song_name": "Deli",
+          "artist": "Duman",
+          "duration": "03:04"
+        },
+        {
+          "song_name": "Yürek",
+          "artist": "Duman",
+          "duration": "04:49"
+        }
+      ]
+    },
+    {
+      "playlist_id": 4,
+      "playlist_name": "Telecaster",
+      "playlist_description": "Yaralar derin, seneler kadar",
+      "tracks": [
+        {
+          "song_name": "Helal Olsun",
+          "artist": "Can Bonomo",
+          "duration": "03:39"
+        }
+      ]
+    },
+    {
+      "playlist_id": 5,
+      "playlist_name": "4 Mevsim",
+      "playlist_description": "",
+      "tracks": [
+        {
+          "song_name": "The Four Seasons: Spring",
+          "artist": "Vivaldi",
+          "duration": "10:20"
+        },
+        {
+          "song_name": "The Four Seasons: Summer",
+          "artist": "Vivaldi",
+          "duration": "11:05"
+        },
+        {
+          "song_name": "The Four Seasons: Autumn",
+          "artist": "Vivaldi",
+          "duration": "12:05"
+        },
+        {
+          "song_name": "The Four Seasons: Winter",
+          "artist": "Vivaldi",
+          "duration": "08:58"
+        }
+      ]
+    }
+  ]
+}
+
+
+[
+  {
+    "subscription_plan": "individual",
+    "name": "Individual",
+    "price": 40
+  },
+  {
+    "subscription_plan": "student",
+    "name": "Student",
+    "price": 22
+  },
+  {
+    "subscription_plan": "family",
+    "name": "Family",
+    "price": 65
+  }
+]
+
+
+[
+  {
+    "family_group_id": 1,
+    "users": [
+      {
+        "user_id": 101,
+        "family_plan_id": 1000
+      },
+      {
+        "user_id": 100,
+        "family_plan_id": 1000
+      }
+    ]
+  }
+]
+
+
+{
+  "albums": [
+    {
+      "album_name": "Darmaduman",
+      "release_date": "12.09.2013",
+      "artist_id": 4
+    },
+    {
+      "album_name": "Diğer Masallar",
+      "release_date": "16.02.2011",
+      "artist_id": 3
+    },
+    {
+      "album_name": "RUSH!",
+      "release_date": "20.01.2023",
+      "artist_id": 2
+    },
+    {
+      "album_name": "Bulunmam Gerek",
+      "release_date": "15.12.2014",
+      "artist_id": 1
+    },
+    {
+      "album_name": "The Four Seasons:Spring in E Major",
+      "release_date": "16.02.2009",
+      "artist_id": 5
+    }
+  ]
+}
+
+{
+  "genres": [
+    {
+      "genre_id": 1,
+      "genre_name": "Pop"
+    },
+    {
+      "genre_id": 2,
+      "genre_name": "Jazz"
+    },
+    {
+      "genre_id": 3,
+      "genre_name": "Classical"
+    },
+    {
+      "genre_id": 4,
+      "genre_name": "Rock"
+    },
+    {
+      "genre_id": 5,
+      "genre_name": "Rap"
+    },
+    {
+      "genre_id": 6,
+      "genre_name": "Turkish"
+    },
+    {
+      "genre_id": 7,
+      "genre_name": "Funk"
+    },
+    {
+      "genre_id": 8,
+      "genre_name": "Alternative"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+create table Track_Genre (
+Track_Genre_ID bigint AUTO_INCREMENT PRIMARY KEY,
+Track_ID bigint NOT NULL,
+Foreign Key (Track_ID) REFERENCES Tracks(Track_ID),
+Genre_ID int NOT NULL,
+Foreign Key (Genre_ID) REFERENCES Genres(Genre_ID)
+);
