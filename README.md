@@ -3,7 +3,7 @@
  
 ### ERD Diagram of the Project
  
-[ERD Diagram](https://github.com/omersnturk/Spotify-Database/blob/main/ERD%20Diagram/Spotify_5.4.png)
+![ERD Diagram](https://github.com/omersnturk/Spotify-Database/blob/main/ERD%20Diagram/Spotify_5.4.png)
 
 2 Tables of the Project
 2.1 Podcasters
