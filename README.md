@@ -7,27 +7,28 @@
 
 ---
 ### Tables of the Project
-2.1 Podcasters
+
+2.1 *Podcasters*
   
 Podcaster_ID column has “primary key” constraint.
 Podcaster_Name column has “NOT NULL” constraint.
 
 
 
-2.2 Users
+2.2 *Users*
   
 User_ID column has “primary key” constraint.
 Subscription_Plan_ID column has “foreign key” constraint references from subscription table.
 Name, Email, Phone_Number, Password_Hash, Birth_Date and Subscription_Plan columns have “NOT NULL” constraint.
 
-2.3 Artists
+2.3 *Artists*
  
   
  Artist_ID column has “primary key” constraint.
 About column has “default” constraint. If the singer or podcaster has not written anything about themselves, it says "This singer/podcaster has not entered any information about themselves".
 Artists_Name and Number_of_Followers columns have the “NOT NULL” constraint.
 
-2.4 Albums
+2.4 *Albums*
 
  
  Album_ID column has “primary key” constraint.
@@ -38,14 +39,14 @@ On the other hand, the table does not have any other constraints.
 
 
 
-2.5 Tracks
+2.5 *Tracks*
 
  
  Track_ID column has “primary key” constraint.
 Album_ID column, Genre_ID “foreign key” constraint.
 Album_ID column, Genre_ID column, Track_Name, Duration and Listing_Number have “NOT NULL” constraint.
 
-2.6 Payment
+2.6 *Payment*
 
 
   
@@ -54,7 +55,7 @@ User_ID column has “foreign key” and “NOT NULL” constraints.
 Payment_Method and Payment_Date columns have “NOT NULL” constraint.
 
 
-2.7 Episodes
+2.7 *Episodes*
 
 
  
@@ -62,7 +63,7 @@ Episode_ID column has “primary key” constraint.
 Podcaster_ID column has “foreign key” and “NOT NULL” constraints.
 Episode_Name and Relase_Date columns have also “NOT NULL” constraint.
 
-2.8 Logs
+2.8 *Logs*
 
  
 Log_ID column has “primary key” constraint.
@@ -73,7 +74,7 @@ Listening_Date column has “NOT NULL” constraint.
 
 
 
-2.9 Family
+2.9 *Family*
 
  
 Family_Groups column has “primary key” constraint.
@@ -81,66 +82,66 @@ User_Id column has “foreign key” and “NOT NULL” constraints.
 Family_Plan_ID columns has “NOT NULL” constraint.
 
 
-2.10 Playlists
+2.10 *Playlists*
 
   
 Playlist_ID column has “primary key” constraint.
 
-2.11 Genres
+2.11 *Genres*
 
  
 Genre_ID column has “primary key” constraint and Genre_Name column has “NOT NULL” constraint.
 
-2.12 Playlists_Tracks
+2.12 *Playlists_Tracks*
 
  
 Playlist_Track_ID column has “primary key” constraint.
 Playlist_ID and Track_ID columns have “foreign key” and “NOT NULL” constraints.
 Relase_Date columns has “NOT NULL” constraint.
 
-2.13 User-Podcasters
+2.13 *User-Podcasters*
 
  
 User_Podcasters column has “primary key” constraint.
 User_ID and Podcaster_ID columns have “foreign key” and “NOT NULL” constraints.
 
-2.14 Saved-Episodes
+2.14 *Saved-Episodes*
 
  
 Saved_Episodes_ID column has “primary key” constraint.
 User_ID and Episode_ID columns have “foreign key” and “NOT NULL” constraints.
 
-2.15 Artists-Albums
+2.15 *Artists-Albums*
 
  
 Artists_Album_ID column has “primary key” constraint.
 Album_ID and Artist_ID columns have “foreign key” and “NOT NULL” constraints.
 
-2.16 Users-Artists
+2.16 *Users-Artists*
 
  
 User_Artists_ID column has “primary key” constraint.
 Artist_ID and User_ID columns have “foreign key” and “NOT NULL” constraints.
 
-2.17 Liked-Tracks
+2.17 *Liked-Tracks*
 
  
 Liked_Track_ID column has “primary key” constraint.
 User_ID and Track_ID columns have “foreign key” and “NOT NULL” constraints.
 
-2.18 Users-Playlist
+2.18 *Users-Playlist*
 
  
 Users_Playlists_ID column has “primary key” constraint.
 User_ID and Playlist_ID columns have “foreign key” and “NOT NULL” constraints.
 
-2.19 Track-Genre
+2.19 *Track-Genre*
 
  
 Track_Genre_ID column has “primary key” constraint.
 Track_ID and Genre_ID columns have “foreign key” and “NOT NULL” constraints.
 
-2.20 Subscription-Plan 
+2.20 *Subscription-Plan*
 
  
 Subscription_Plan_ID column has “primary key” constraint.
